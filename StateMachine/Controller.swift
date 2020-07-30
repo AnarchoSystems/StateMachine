@@ -22,5 +22,66 @@ class Controller : ObservableObject {
        }
      }
   }
+    
+    
+    init(){
+        
+        self.state = .PlacePhoneCall(proceed: self.start)
+        
+    }
+    
   
+}
+
+
+fileprivate extension Controller {
+    
+    func start(){
+        
+    }
+    
+    
+    func leaveMessage(_ message: String){
+        
+    }
+    
+    func askShareAMeal(){
+        
+    }
+    
+    
+    func askEnjoyBeverage(){
+        
+    }
+    
+    
+    func dineTogether(){
+        
+    }
+    
+    
+    func enjoyBeverageTogether(){
+        
+    }
+    
+    
+    func askForInterests(){
+        
+    }
+    
+    
+    func agreeToInterest(){
+        
+    }
+    
+    
+    func askForAnotherInterest(){
+        
+    }
+    
+    
+    func partakeInCurrentInterest(){
+        
+    }
+    
 }
