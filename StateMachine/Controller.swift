@@ -38,6 +38,12 @@ fileprivate extension Controller {
     
     func start(){
         
+        let callAnswered = Bool.random()
+        
+        self.state = callAnswered ?
+            .StartOfCall(askShareAMeal: askShareAMeal) :
+            .NotHome(leaveMessage: leaveMessage)
+        
     }
     
     
