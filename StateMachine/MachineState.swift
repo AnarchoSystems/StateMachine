@@ -3,7 +3,7 @@
 
 enum MachineState {
     
-    case PlacePhoneCall //can go to StartOfCall or NotHome
+    case PlacePhoneCall(proceed: () -> Void) //can go to StartOfCall or NotHome
     
     case NotHome(leaveMessage: (String) -> Void) //you can leave a custom message; after that, you go to WaitForCallback
     case WaitForCallback //at some random point in the future, you go to StartOfCall
