@@ -50,6 +50,8 @@ fileprivate extension Controller {
     
     func leaveMessage(_ message: String){
         
+        self.state = .WaitForCallback
+        
         let annoyedFactor = Double(message.split(separator: " ").count)
         
         let range = (annoyedFactor/3)...annoyedFactor
