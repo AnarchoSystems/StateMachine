@@ -49,9 +49,19 @@ fileprivate extension Controller {
     
     func leaveMessage(_ message: String){
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 3...60)) {
+            self.state = .StartOfCall(askShareAMeal: self.askShareAMeal)
+        }
+        
     }
     
     func askShareAMeal(){
+        
+        let wantsToShareMeal = Bool.random()
+        
+        self.state = wantsToShareMeal ?
+            .WantsToShareAMeal(dineTogether: dineTogether) :
+        .DoesNotWantToShareAMeal(askEnjoyBeverage: askEnjoyBeverage)
         
     }
     
