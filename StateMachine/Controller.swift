@@ -27,6 +27,7 @@ class Controller : ObservableObject {
     init(){
         
         self.state = .PlacePhoneCall(proceed: self.start)
+        self.publicState = .PlacePhoneCall(proceed: self.start)
         
     }
     
