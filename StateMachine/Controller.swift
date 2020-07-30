@@ -72,15 +72,25 @@ fileprivate extension Controller {
     
     func askEnjoyBeverage(){
         
+        let wantsToEnjoyBeverage = Bool.random()
+        
+        self.state = wantsToEnjoyBeverage ?
+            .WantsToEnjoyAHotBeverage(enjoyBeverageTogether: enjoyBeverageTogether) :
+        .DoesNotWantToEnjoyAHotBeverage(askForInterests: askForInterests)
+        
     }
     
     
     func dineTogether(){
         
+        self.state = .StartOfFriendship
+        
     }
     
     
     func enjoyBeverageTogether(){
+        
+        self.state = .StartOfFriendship
         
     }
     
