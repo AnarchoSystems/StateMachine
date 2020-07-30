@@ -24,6 +24,6 @@ enum MachineState {
 }
 
 
-enum Interest : Equatable{
+enum Interest : Equatable, CaseIterable{
     case Climbing
 }

@@ -97,20 +97,34 @@ fileprivate extension Controller {
     
     func askForInterests(){
         
+        self.state = .ProposedInterest(interest: Interest.allCases.randomElement()!,
+                                       ok: agreeToInterest,
+                                       askForAnotherInterest: askForAnotherInterest)
+        
     }
     
     
     func agreeToInterest(){
+        
+        guard case .ProposedInterest(let interest, _, _) = self.state else{
+            return
+        }
+        
+        self.state = .PartakeInInterest(interest: interest)
         
     }
     
     
     func askForAnotherInterest(){
         
+        askForInterests()
+        
     }
     
     
     func partakeInCurrentInterest(){
+        
+        self.state = .StartOfFriendship
         
     }
     
