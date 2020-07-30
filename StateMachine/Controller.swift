@@ -49,7 +49,11 @@ fileprivate extension Controller {
     
     func leaveMessage(_ message: String){
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 3...60)) {
+        let annoyedFactor = Double(message.split(separator: " ").count)
+        
+        let range = (annoyedFactor/3)...annoyedFactor
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: range)) {
             self.state = .StartOfCall(askShareAMeal: self.askShareAMeal)
         }
         
